@@ -23,44 +23,49 @@ import { DataServiceExamplePage } from '../pages/data-service-example/data-servi
 
 
 @NgModule({
-  declarations: [
-    MyApp,
-    HomePage,
-    ListPage,
-    LoginPage,
-    StudentsList,
-    StudentDetail,
-    ClassListPage,
-    ClassCreationPage,
-    DataServiceExamplePage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-    HttpModule
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    ListPage,
-    LoginPage,
-    StudentsList,
-    StudentDetail,
-    ClassListPage,
-    ClassCreationPage,
-    DataServiceExamplePage
-
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ClassService,
-    DataService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-
-  ]
+    declarations: [
+        MyApp,
+        HomePage,
+        ListPage,
+        LoginPage,
+        StudentsList,
+        StudentDetail,
+        ClassListPage,
+        ClassCreationPage,
+        DataServiceExamplePage,
+        LoginPage,
+        StudentsList,
+        StudentDetail,
+        ClassListPage,
+        ClassCreationPage,
+        DataServiceExamplePage
+    ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(MyApp),
+        HttpModule
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        HomePage,
+        ListPage,
+        LoginPage,
+        StudentsList,
+        StudentDetail,
+        LoginPage,
+        StudentsList,
+        StudentDetail,
+        ClassListPage,
+        ClassCreationPage,
+        DataServiceExamplePage
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        { provide: ErrorHandler, useClass: IonicErrorHandler },
+        ClassService,
+        DataService
+    ]
 })
 export class AppModule { }
