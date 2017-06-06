@@ -5,8 +5,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+<<<<<<< HEAD
 import {LoginPage} from "../pages/login-page/login-page";
 import { ClassListPage } from '../pages/class-list/class-list';
+=======
+import { LoginPage } from "../pages/login-page/login-page";
+import { ClassListPage } from '../pages/class-list/class-list';
+import { AssignmentsPage } from '../pages/assignments/assignments';
+
+// for testing purposes, please remove later
+import { DataServiceExamplePage } from '../pages/data-service-example/data-service-example'; // used for example usage and testing
+
+>>>>>>> upstream/master
 
 
 @Component({
@@ -15,9 +25,10 @@ import { ClassListPage } from '../pages/class-list/class-list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = DataServiceExamplePage // used for testing
+  //rootPage: any = AssignmentsPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -27,6 +38,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Classes', component: ClassListPage },
+      { title: 'Assignments', component: AssignmentsPage },
+
     ];
 
   }
