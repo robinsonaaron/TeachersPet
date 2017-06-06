@@ -24,6 +24,9 @@ import { StudentServiceProvider } from '../providers/student-service/student-ser
 
 
 
+import {StudentCreation} from "../pages/student-creation/student-creation"; // used for example usage and testing
+
+
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { StudentServiceProvider } from '../providers/student-service/student-ser
     LoginPage,
     StudentsList,
     StudentDetail,
+
+    StudentCreation,
+
     ClassListPage,
     ClassCreationPage,
 
@@ -53,6 +59,10 @@ import { StudentServiceProvider } from '../providers/student-service/student-ser
     LoginPage,
     StudentsList,
     StudentDetail,
+
+    StudentCreation,
+
+
     ClassListPage,
     ClassCreationPage,
     DataServiceExamplePage,

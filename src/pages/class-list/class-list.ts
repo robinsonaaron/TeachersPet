@@ -2,53 +2,58 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { ClassCreationPage } from '../class-creation/class-creation';
-import { ClassService } from '../../providers/class-service';
-import {StudentsList} from "../students-list/students-list";
+import { DataService } from '../../providers/data-service';
+import { StudentsList } from "../students-list/students-list";
 
 @Component({
-    selector: 'page-class',
-    templateUrl: 'class-list.html'
+  selector: 'page-class',
+  templateUrl: 'class-list.html'
 })
 export class ClassListPage implements OnInit {
 
-    classes: any;
-    deleteToggle = false;
+  user: any = 'Aaron Robinson';
 
-    constructor(public navCtrl: NavController, public classService: ClassService) {
+  classes: any;
+  deleteToggle = false;
 
+  constructor(public navCtrl: NavController, public dataService: DataService) {
+
+  }
+
+  createClass() {
+    this.navCtrl.push(ClassCreationPage);
+  }
+
+  importClasses() {
+    this.dataService.getClassList().then(res => {
+      this.classes = res;
+    })
+  }
+
+  toggleDeleteButton() {
+    if (!this.deleteToggle) {
+      this.deleteToggle = true;
     }
+    else this.deleteToggle = false;
+  }
 
-    createClass() {
-        this.navCtrl.push(ClassCreationPage);
-    }
-
-    importClasses() {
-        this.classes = this.classService.classes;
-    }
-
-    toggleDeleteButton(){
-      if(!this.deleteToggle){
-        this.deleteToggle = true;
+  confirmDelete() {
+    for (let i = 0; i < this.classes.length; i++) {
+      if (this.classes[i].selected) {
+        console.log(this.classes[i].name);
       }
-      else this.deleteToggle = false;
     }
+  }
 
-    confirmDelete(){
-      for(let i = 0; i < this.classes.length; i++){
-        if(this.classes[i].selected){
-          console.log(this.classes[i].name);
-        }
-      }
-    }
+  classSelected() {
+    this.navCtrl.push(StudentsList);
+  }
 
-    classSelected()
-    {
-      this.navCtrl.push(StudentsList);
-    }
-
-    ngOnInit(){
-        this.importClasses();
-    }
-
-
+  ngOnInit() {
+    this.importClasses();
+  }
+  
+  ionViewWillEnter(){
+    this.importClasses();
+  }
 }
