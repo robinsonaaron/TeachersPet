@@ -20,57 +20,9 @@ import { AssignmentsPage } from "../pages/assignments/assignments";
 
 import { DataService } from '../providers/data-service';
 import { DataServiceExamplePage } from '../pages/data-service-example/data-service-example';
-<<<<<<< HEAD
 import { StudentServiceProvider } from '../providers/student-service/student-service'; // used for example usage and testing
 
 
-@NgModule({
-    declarations: [
-        MyApp,
-        HomePage,
-        ListPage,
-        LoginPage,
-        StudentsList,
-        StudentDetail,
-        ClassListPage,
-        ClassCreationPage,
-        DataServiceExamplePage,
-        LoginPage,
-        StudentsList,
-        StudentDetail,
-        ClassListPage,
-        ClassCreationPage,
-        DataServiceExamplePage
-    ],
-    imports: [
-        BrowserModule,
-        IonicModule.forRoot(MyApp),
-        HttpModule
-    ],
-    bootstrap: [IonicApp],
-    entryComponents: [
-        MyApp,
-        HomePage,
-        ListPage,
-        LoginPage,
-        StudentsList,
-        StudentDetail,
-        LoginPage,
-        StudentsList,
-        StudentDetail,
-        ClassListPage,
-        ClassCreationPage,
-        DataServiceExamplePage
-    ],
-    providers: [
-        StatusBar,
-        SplashScreen,
-        { provide: ErrorHandler, useClass: IonicErrorHandler },
-        ClassService,
-        DataService,
-    StudentServiceProvider
-    ]
-=======
 
 
 @NgModule({
@@ -114,6 +66,5 @@ import { StudentServiceProvider } from '../providers/student-service/student-ser
     DataService
 
   ]
->>>>>>> upstream/master
 })
 export class AppModule { }
