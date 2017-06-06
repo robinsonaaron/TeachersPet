@@ -3,7 +3,10 @@ import { NavController } from 'ionic-angular';
 
 import { ClassCreationPage } from '../class-creation/class-creation';
 import { ClassService } from '../../providers/class-service';
+<<<<<<< HEAD
 import {StudentsList} from "../students-list/students-list";
+=======
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
 
 @Component({
     selector: 'page-class',
@@ -41,14 +44,21 @@ export class ClassListPage implements OnInit {
       }
     }
 
+<<<<<<< HEAD
     classSelected()
     {
       this.navCtrl.push(StudentsList);
     }
 
+=======
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
     ngOnInit(){
         this.importClasses();
     }
 
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b

@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+<<<<<<< HEAD
 import { LoginPage } from "../pages/login-page/login-page";
 import { ClassListPage } from '../pages/class-list/class-list';
 import { AssignmentsPage } from '../pages/assignments/assignments';
@@ -13,6 +14,9 @@ import { AssignmentsPage } from '../pages/assignments/assignments';
 import { DataServiceExamplePage } from '../pages/data-service-example/data-service-example'; // used for example usage and testing
 
 
+=======
+import { ClassListPage } from '../pages/class-list/class-list';
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
 
 @Component({
   templateUrl: 'app.html'
@@ -33,8 +37,11 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Classes', component: ClassListPage },
+<<<<<<< HEAD
       { title: 'Assignments', component: AssignmentsPage },
 
+=======
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
     ];
 
   }

@@ -22,7 +22,11 @@ export class ClassCreationPage {
 
   addClass(){
     this.classService.classes.push({name: this.className});
+<<<<<<< HEAD
     this.navCtrl.pop();
+=======
+    console.log(this.classService.classes);
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
   }
 
 }

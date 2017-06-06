@@ -3,8 +3,13 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+<<<<<<< HEAD
     <ion-title style="float:left;">Class</ion-title>
     <ion-icon color="primary" name="md-trash" style='font-size:28px; float: right; padding-right: 15px; ' right (click)="toggleDeleteButton()"></ion-icon>
+=======
+    <ion-title>Class</ion-title>
+    <ion-icon color="primary" style="font-size:32px; float: right; padding-right: 15px;" name="md-trash" right (click)="toggleDeleteButton()"></ion-icon>
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
     <form (ngSubmit)="confirmDelete()">
       <button type="submit" ion-button color="danger" *ngIf="deleteToggle" style="float: right;" small>Delete</button>
     </form>
@@ -14,14 +19,25 @@
 <ion-content>
 
   <ion-list inset>
+<<<<<<< HEAD
     <button ion-item *ngFor="let class of classes" (click)="classSelected()">
+=======
+    <button ion-item *ngFor="let class of classes" (click)="classSelected(class)">
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
           <ion-checkbox *ngIf="deleteToggle"[(ngModel)]="class.selected"></ion-checkbox>
             {{class.name}}
         </button>
   </ion-list>
+<<<<<<< HEAD
   
+=======
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
   <ion-fab right bottom>
     <button ion-fab mini (click)="createClass()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
+<<<<<<< HEAD
 </ion-content>
+=======
+</ion-content>
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b

@@ -8,6 +8,11 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ClassListPage } from '../pages/class-list/class-list';
 import { ClassCreationPage } from '../pages/class-creation/class-creation';
+<<<<<<< HEAD
+=======
+
+import { ClassService } from '../providers/class-service';
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
 
 import { ClassService } from '../providers/class-service';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -28,6 +33,7 @@ import { DataServiceExamplePage } from '../pages/data-service-example/data-servi
     MyApp,
     HomePage,
     ListPage,
+<<<<<<< HEAD
     LoginPage,
     StudentsList,
     StudentDetail,
@@ -37,6 +43,10 @@ import { DataServiceExamplePage } from '../pages/data-service-example/data-servi
     DataServiceExamplePage,
     AssignmentsPage
 
+=======
+    ClassListPage,
+    ClassCreationPage
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
   ],
   imports: [
     BrowserModule,
@@ -48,6 +58,7 @@ import { DataServiceExamplePage } from '../pages/data-service-example/data-servi
     MyApp,
     HomePage,
     ListPage,
+<<<<<<< HEAD
     LoginPage,
     StudentsList,
     StudentDetail,
@@ -55,14 +66,23 @@ import { DataServiceExamplePage } from '../pages/data-service-example/data-servi
     ClassCreationPage,
     DataServiceExamplePage,
     AssignmentsPage
+=======
+    ClassListPage,
+    ClassCreationPage
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
   ],
   providers: [
     StatusBar,
     SplashScreen,
+<<<<<<< HEAD
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ClassService,
     DataService
 
+=======
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ClassService
+>>>>>>> 75c0f3aeec90469e5c88174c444e6c1ad446908b
   ]
 })
 export class AppModule { }
