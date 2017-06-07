@@ -18,6 +18,7 @@ import { LoginPage } from "../pages/login-page/login-page";
 import { StudentsList } from "../pages/students-list/students-list";
 import { StudentDetail } from "../pages/student-detail/student-detail";
 import { AssignmentsPage } from "../pages/assignments/assignments";
+import { AssignmentCreationPage } from "../pages/assignmentCreation/assignmentCreation";
 
 import { DataService } from '../providers/data-service';
 import { DataServiceExamplePage } from '../pages/data-service-example/data-service-example';
@@ -39,6 +40,7 @@ import {StudentCreation} from "../pages/student-creation/student-creation"; // u
 
     ClassListPage,
     ClassCreationPage,
+    AssignmentCreationPage,
 
     DataServiceExamplePage,
     AssignmentsPage
@@ -64,7 +66,8 @@ import {StudentCreation} from "../pages/student-creation/student-creation"; // u
     ClassListPage,
     ClassCreationPage,
     DataServiceExamplePage,
-    AssignmentsPage
+    AssignmentsPage,
+    AssignmentCreationPage, 
   ],
   providers: [
     StatusBar,

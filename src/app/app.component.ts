@@ -13,6 +13,7 @@ import { LoginPage } from "../pages/login-page/login-page";
 
 import { ClassListPage } from '../pages/class-list/class-list';
 import { AssignmentsPage } from '../pages/assignments/assignments';
+import { AssignmentCreationPage } from '../pages/assignmentCreation/assignmentCreation';
 
 
 // for testing purposes, please remove later
