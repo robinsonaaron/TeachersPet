@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StudentDetail } from "../student-detail/student-detail";
-import {StudentCreation} from "../student-creation/student-creation";
+import { StudentCreation } from '../student-creation/student-creation';
 
 
 @IonicPage()
@@ -19,14 +19,13 @@ export class StudentsList implements OnInit {
   }
 
   ngOnInit() {
-    //this.aaronAndWarrensService.getStudents().subscribe(data => {
+    //this.aaronAndWarrensService.getStudents().subscribe(data => { 
     //  this.students = data;
   }
 
   navToStudentDetail() {
     this.navCtrl.push(StudentDetail);
   }
-
   createStudent() {
     this.navCtrl.push(StudentCreation);
   }
