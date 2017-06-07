@@ -27,6 +27,7 @@ export class AssignmentCreationPage {
 
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataService) {
+        this.dataService.setClass("Mobile Development 2017");
     }
 
     addAssignment() {
@@ -35,6 +36,7 @@ export class AssignmentCreationPage {
       assignment.Title = this.Title;
       assignment.PointsPossible = this.PointsPossible;
       assignment.Description = this.Description;
+      // Program Does NOT like this Description
       assignment.DueDate = this.DueDate;
       assignment.DateAssigned = this.DateAssigned;
       assignment.GithubLink = this.GithubLink;
