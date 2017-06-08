@@ -5,6 +5,7 @@ import { ClassCreationPage } from '../class-creation/class-creation';
 
 import { DataService } from '../../providers/data-service';
 import { StudentsList } from "../students-list/students-list";
+import {LoginPage} from "../login-page/login-page";
 
 
 
@@ -76,6 +77,27 @@ export class ClassListPage implements OnInit {
 
   ionViewWillEnter(){
     this.importClasses();
+  }
+
+  signOut(){
+    this.dataService.signOut();
+
+  }
+
+  navToLoginPage(){
+    this.navCtrl.push(LoginPage);
+  }
+
+  ionViewDidLoad() {
+    this.dataService.getUserAuthStatus().subscribe(user => {
+        console.log(user);
+        if (user == null)
+        {
+          this.navToLoginPage();
+        }
+
+      }
+    );
   }
 }
 
