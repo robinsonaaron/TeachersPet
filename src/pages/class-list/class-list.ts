@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 
 import { ClassCreationPage } from '../class-creation/class-creation';
+
 import { DataService } from '../../providers/data-service';
 import { StudentsList } from "../students-list/students-list";
+
+
+
 
 @Component({
   selector: 'page-class',
@@ -13,10 +17,11 @@ export class ClassListPage implements OnInit {
 
   user: any = 'Aaron Robinson';
 
+  classSelected: any;
   classes: any;
   deleteToggle = false;
 
-  constructor(public navCtrl: NavController, public dataService: DataService) {
+  constructor(public navCtrl: NavController, public dataService: DataService, public alert: AlertController) {
 
   }
 
@@ -38,14 +43,29 @@ export class ClassListPage implements OnInit {
   }
 
   confirmDelete() {
-    for (let i = 0; i < this.classes.length; i++) {
-      if (this.classes[i].selected) {
-        console.log(this.classes[i].name);
-      }
-    }
+    let alert = this.alert.create({
+      title: 'Delete?',
+      message: "Are you sure you want to delete this class?",
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+            console.log('Cancelled')
+          }
+        },
+        {
+          text: 'Confirm',
+          handler: () => {
+            this.dataService.removeClass(this.classSelected);
+            this.importClasses();
+          }
+        }
+      ]
+    })
+    alert.present();
   }
 
-  classSelected() {
+  classClicked() {
     this.navCtrl.push(StudentsList);
   }
 
@@ -57,3 +77,8 @@ export class ClassListPage implements OnInit {
     this.importClasses();
   }
 }
+
+
+
+
+

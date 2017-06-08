@@ -1,0 +1,49 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>assignmentCreation</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <form (ngSubmit)="addAssignment()">
+
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Assignment Name</ion-label>
+                <ion-input type="text" [(ngModel)]="Title" name="Title"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Points Possible</ion-label>
+                <ion-input type="text" [(ngModel)]="PointsPossible" name="PointsPossible"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Descripton</ion-label>
+                <ion-input type="text" [(ngModel)]="Descripton" name="Descripton"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Due Date</ion-label>
+                <ion-input type="text" [(ngModel)]="DueDate" name="DueDate"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Date Assigned</ion-label>
+                <ion-input type="text" [(ngModel)]="DateAssigned" name="DateAssigned"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Github Link</ion-label>
+                <ion-input type="text" [(ngModel)]="GithubLink" name="GithubLink"></ion-input>
+            </ion-item>
+
+
+        </ion-list>
+        <button ion-button type="submit">Submit</button>
+    </form>
+
+</ion-content>
