@@ -12,7 +12,8 @@
   <ion-list inset (click)="navToStudentDetail()">
     <button ion-item *ngFor="let student of students" >
 
-      {{student.Name}}
+      <div ><p >{{student.Name}} </p></div><br>
+        Email :{{student.Email}} <br>Github Link: {{student.GithubLink}}<br> Slack ID :{{student.SlackID}}
     </button>
   </ion-list>
 
