@@ -21,7 +21,6 @@ import { DataServiceExamplePage } from '../pages/data-service-example/data-servi
 
 
 
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -42,6 +41,7 @@ export class MyApp {
       //{ title: 'List', component: ListPage },
       { title: 'Classes', component: ClassListPage },
       { title: 'Assignments', component: AssignmentsPage },
+
 
     ];
 

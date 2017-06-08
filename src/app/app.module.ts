@@ -44,7 +44,6 @@ import {StudentCreation} from "../pages/student-creation/student-creation"; // u
 
     DataServiceExamplePage,
     AssignmentsPage
-
   ],
   imports: [
     BrowserModule,
@@ -68,6 +67,7 @@ import {StudentCreation} from "../pages/student-creation/student-creation"; // u
     DataServiceExamplePage,
     AssignmentsPage,
     AssignmentCreationPage, 
+   
   ],
   providers: [
     StatusBar,
