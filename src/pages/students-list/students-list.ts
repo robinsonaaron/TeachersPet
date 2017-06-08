@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StudentDetail } from "../student-detail/student-detail";
-<<<<<<< HEAD
-import { StudentCreation } from '../student-creation/student-creation';
-=======
+
 import {StudentCreation} from "../student-creation/student-creation";
 import { DataService } from '../../providers/data-service';
->>>>>>> upstream/master
+
 
 
 @IonicPage()
@@ -25,14 +23,6 @@ export class StudentsList implements OnInit {
     console.log('ionViewDidLoad StudentsList');
   }
 
-<<<<<<< HEAD
-  ngOnInit() {
-    //this.aaronAndWarrensService.getStudents().subscribe(data => { 
-    //  this.students = data;
-  }
-=======
-
->>>>>>> upstream/master
 
   navToStudentDetail() {
     this.navCtrl.push(StudentDetail);
@@ -41,7 +31,6 @@ export class StudentsList implements OnInit {
     this.navCtrl.push(StudentCreation);
   }
 
-//
 
 
   importClasses() {
@@ -49,10 +38,6 @@ export class StudentsList implements OnInit {
       this.students = res;
     })
   }
-
-
-
-
 
 
   ngOnInit() {
