@@ -2,8 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
 import { ClassCreationPage } from '../class-creation/class-creation';
+
 import { DataService } from '../../providers/data-service';
 import { StudentsList } from "../students-list/students-list";
+
+
+
 
 @Component({
   selector: 'page-class',
@@ -74,3 +78,4 @@ export class ClassListPage implements OnInit {
     this.importClasses();
   }
 }
+
