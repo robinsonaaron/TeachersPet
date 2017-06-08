@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AssignmentCreationPage } from '../assignmentCreation/assignmentCreation';
 
 import { DataService, Assignment } from '../../providers/data-service';
 
@@ -16,10 +17,14 @@ import { DataService, Assignment } from '../../providers/data-service';
 })
 export class AssignmentsPage implements OnInit {
 
-  assignments: Assignment[] = [];
+  assignments: any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataService) {
+  }
+
+  createAssignment() {
+      this.navCtrl.push(AssignmentCreationPage);
   }
 
   getAssignments() {
