@@ -13,11 +13,11 @@ import { LoginPage } from "../pages/login-page/login-page";
 
 import { ClassListPage } from '../pages/class-list/class-list';
 import { AssignmentsPage } from '../pages/assignments/assignments';
+import { AssignmentCreationPage } from '../pages/assignmentCreation/assignmentCreation';
 
 
 // for testing purposes, please remove later
 import { DataServiceExamplePage } from '../pages/data-service-example/data-service-example'; // used for example usage and testing
-
 
 
 
@@ -41,6 +41,7 @@ export class MyApp {
       //{ title: 'List', component: ListPage },
       { title: 'Classes', component: ClassListPage },
       { title: 'Assignments', component: AssignmentsPage },
+
 
     ];
 
