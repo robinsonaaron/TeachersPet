@@ -11,8 +11,6 @@ import { StudentsList } from "../students-list/students-list";
 })
 export class ClassListPage implements OnInit {
 
-  user: any = 'Aaron Robinson';
-
   classSelected: any;
   classes: any;
   deleteToggle = false;
@@ -61,7 +59,8 @@ export class ClassListPage implements OnInit {
     alert.present();
   }
 
-  classClicked() {
+  classClicked(bar) {
+    this.dataService.setClass(bar);
     this.navCtrl.push(StudentsList);
   }
 
