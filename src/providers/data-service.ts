@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import * as keys from '../../keys';
+import { Http } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
+
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class DataService {
 
   private className = "";
 
-  constructor() {
+
+  constructor(private http:Http) {
+    //let http: Http;
     firebase.initializeApp(keys.firebaseConfig);
   }
 
@@ -195,9 +200,14 @@ export class DataService {
     return new Promise((resolve, reject) => {
       let fbObject = firebase.database().ref(this.className + "/StudentList").push();
       student.Key = fbObject.key;
+      this.getGithubProfileImage(student.GithubID).then(imageURL => {    
+        if(imageURL.length > 0)    
+          student.ImageURL = imageURL;
+      }).then(() => 
       fbObject.set(student)
         .then(snapshot => resolve("added"))
-        .catch(error => reject(error.message));
+        .catch(error => reject(error.message))
+      );
     });
   }
 
@@ -317,6 +327,18 @@ export class DataService {
       PointsScored: 0,
       DateSubmitted: ""
     };
+  }
+
+  private getGithubProfileImage(githubID: string): Promise<string>{
+    return new Promise((resolve, reject) => {
+      this.http.get('https://api.github.com/users/' + githubID)
+      .map(res => res.json()).toPromise().then(data => {
+        resolve(data.avatar_url);
+      }).catch(error => {
+        console.log("Warning: could not find user image from Github")
+        resolve('');
+      });
+    });
   }
 }
 
