@@ -16,9 +16,9 @@
 <ion-content>
 
   <ion-list radio-group [(ngModel)]='classSelected'>
-    <ion-item *ngFor="let class of classes" (click)="classClicked()">
-      <ion-label>{{class}}</ion-label>
-      <ion-radio value='{{class}}'  *ngIf="deleteToggle"></ion-radio>
+    <ion-item *ngFor="let className of classes" (click)="classClicked(className)">
+      <ion-label>{{className}}</ion-label>
+      <ion-radio value='{{className}}'  *ngIf="deleteToggle"></ion-radio>
     </ion-item>
   </ion-list>
 
