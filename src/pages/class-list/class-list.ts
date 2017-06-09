@@ -64,21 +64,16 @@ export class ClassListPage implements OnInit {
     alert.present();
   }
 
-  classClicked(bar) {
-    this.dataService.setClass(bar);
-    this.navCtrl.push(StudentsList);
+  classClicked(className) {
+    this.dataService.setClass(className).then(res => this.navCtrl.push(StudentsList));
   }
 
   ngOnInit() {
     this.importClasses();
   }
-  
+
   ionViewWillEnter(){
     this.importClasses();
   }
 }
-
-
-
-
 

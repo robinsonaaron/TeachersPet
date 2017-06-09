@@ -11,18 +11,16 @@ import { DataService } from '../../providers/data-service';
   templateUrl: 'students-list.html',
 })
 export class StudentsList implements OnInit {
+  students: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public dataService: DataService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StudentsList');
   }
 
-  ngOnInit() {
-    //this.aaronAndWarrensService.getStudents().subscribe(data => {
-    //  this.students = data;
-  }
+
 
   navToStudentDetail() {
     this.navCtrl.push(StudentDetail);
@@ -31,4 +29,24 @@ export class StudentsList implements OnInit {
   createStudent() {
     this.navCtrl.push(StudentCreation);
   }
+
+
+
+  importClasses() {
+    this.dataService.getStudentList().then(res => {
+      this.students = res;
+    })
+  }
+
+
+
+
+
+
+  ngOnInit() {
+    this.importClasses();
+  }
+
+
+
 }
