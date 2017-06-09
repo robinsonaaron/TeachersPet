@@ -16,8 +16,6 @@ import {LoginPage} from "../login-page/login-page";
 })
 export class ClassListPage implements OnInit {
 
-  user: any = 'Aaron Robinson';
-
   classSelected: any;
   classes: any;
   deleteToggle = false;
@@ -59,6 +57,7 @@ export class ClassListPage implements OnInit {
           handler: () => {
             this.dataService.removeClass(this.classSelected);
             this.importClasses();
+            this.toggleDeleteButton();
           }
         }
       ]
@@ -68,7 +67,6 @@ export class ClassListPage implements OnInit {
 
   classClicked(className) {
     this.dataService.setClass(className).then(res => this.navCtrl.push(StudentsList));
-
   }
 
   ngOnInit() {

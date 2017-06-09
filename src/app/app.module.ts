@@ -13,7 +13,6 @@ import { ClassService } from '../providers/class-service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-
 import { LoginPage } from "../pages/login-page/login-page";
 import { StudentsList } from "../pages/students-list/students-list";
 import { StudentDetail } from "../pages/student-detail/student-detail";
@@ -22,6 +21,9 @@ import { AssignmentCreationPage } from "../pages/assignmentCreation/assignmentCr
 
 import { DataService } from '../providers/data-service';
 import { DataServiceExamplePage } from '../pages/data-service-example/data-service-example';
+import { StudentServiceProvider } from '../providers/student-service/student-service'; // used for example usage and testing
+
+
 
 import {StudentCreation} from "../pages/student-creation/student-creation"; // used for example usage and testing
 

@@ -1,6 +1,14 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>List of Students by Class</ion-title>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="float:left;">List of Students by Class</ion-title>
+
+    <ion-icon color="primary" style="font-size:28px; float: right; padding-right: 15px;" name="md-trash" right (click)="toggleDeleteButton()"></ion-icon>
+    <form (ngSubmit)="confirmDelete()">
+      <button type="submit" ion-button color="danger" *ngIf="deleteToggle" style="float: right;" small>Delete</button>
+    </form>
   </ion-navbar>
 </ion-header>
 
@@ -8,6 +16,7 @@
 
 
 <ion-content>
+  
 
   <ion-list inset (click)="navToStudentDetail()">
     <button ion-item *ngFor="let student of students" >
@@ -20,5 +29,6 @@
   <ion-fab right bottom>
     <button ion-fab mini (click)="createStudent()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
+
 
 </ion-content>

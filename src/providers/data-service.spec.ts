@@ -6,7 +6,7 @@ import * as firebase from 'firebase';
 
 
 describe('Data Service Testing', () => {
-    let dataService:DataService = new DataService();
+    let dataService:DataService = new DataService(null);
 
     let testStudent = {
         Email: 'email',

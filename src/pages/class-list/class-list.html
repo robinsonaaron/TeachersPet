@@ -5,7 +5,7 @@
     </button>
     <ion-title style="float:left;">Class</ion-title>
 
-    <ion-icon color="primary" style="font-size:28px; float: right; padding-right: 15px;" name="md-trash" right (click)="toggleDeleteButton()"></ion-icon>
+    <ion-icon color="primary" style="font-size:28px; float: right; padding-left: 15px; padding-right: 15px;" name="md-trash" right (click)="toggleDeleteButton()"></ion-icon>
     <form (ngSubmit)="confirmDelete()">
       <button type="submit" ion-button color="danger" *ngIf="deleteToggle" style="float: right;" small>Delete</button>
     </form>
@@ -25,9 +25,13 @@
     <button ion-fab mini (click)="createClass()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
+<<<<<<< HEAD
   <ion-fab left bottom>
     <button ion-fab mini (click)="signOut()"><ion-icon name="log-out"></ion-icon></button>
   </ion-fab>
 
 </ion-content>
 
+=======
+</ion-content>
+>>>>>>> upstream/master
