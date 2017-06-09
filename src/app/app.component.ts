@@ -41,6 +41,7 @@ export class MyApp {
 
   logOut(){
     this.dataService.signOut();
+    this.nav.popToRoot();
   }
 
   initializeApp() {
