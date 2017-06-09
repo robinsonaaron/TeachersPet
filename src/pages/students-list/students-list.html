@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title style="float:left;">List of Students by Class</ion-title>
+    <ion-title style="float:left;">Students by Class</ion-title>
 
     <ion-icon color="primary" style="font-size:28px; float: right; padding-right: 15px;" name="md-trash" right (click)="toggleDeleteButton()"></ion-icon>
     <form (ngSubmit)="confirmDelete()">
@@ -16,14 +16,14 @@
 
 
 <ion-content>
-  
 
-  <ion-list inset (click)="navToStudentDetail()">
-    <button ion-item *ngFor="let student of students" >
+  <ion-list radio-group [(ngModel)]='studentSelected'>
+    <ion-item *ngFor="let student of students" (click)="navToStudentDetail()" >
 
       <div ><p >{{student.Name}} </p></div><br>
         Email :{{student.Email}} <br>Github Link: {{student.GithubLink}}<br> Slack ID :{{student.SlackID}}
-    </button>
+        <ion-radio value="{{student.Name}}" *ngIf='deleteToggle'></ion-radio>
+    </ion-item>
   </ion-list>
 
   <ion-fab right bottom>
