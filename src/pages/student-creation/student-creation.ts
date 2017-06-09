@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-<<<<<<< HEAD
-import { DataService } from '../../providers/data-service';
-import {  StudentsList} from '../../pages/students-list/students-list';
-=======
-import { DataService, Student } from '../../providers/data-service';
->>>>>>> upstream/master
+
+import { DataService,Student } from '../../providers/data-service';
+
+
+
+
 
 /**
  * Generated class for the StudentCreation page.
@@ -19,18 +19,20 @@ import { DataService, Student } from '../../providers/data-service';
   templateUrl: 'student-creation.html',
 })
 export class StudentCreation {
-  studentName: any;
+  studentName: string;
+  slackID : string;
+  email : string;
+  githudID : string;
 
-<<<<<<< HEAD
-  constructor(public navCtrl: NavController, public navParams: NavParams, public  dataService: DataService) {
-=======
-  user: any = null;
+
+
+
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataService) {
->>>>>>> upstream/master
+
   }
 
-  student: any;
 
 
 
@@ -43,26 +45,26 @@ export class StudentCreation {
   }
 
 
-<<<<<<< HEAD
+
 
   addStudent(){
     //this.dataService.addStudent(this.studentName);
     this.dataService.addStudent(this.student.Name).then(() => this.refreshStudentList());
     this.navCtrl.pop();
   }*/
-=======
+
   addStudent() {
       let student:Student = new Student();
-      student.Email = "";
-      student.GithubID = "";
+      student.Email = this.email;
+      student.GithubID = this.githudID;
       student.ImageURL = "";
-      student.SlackID = "";
+      student.SlackID = this.slackID;
       student.Name = this.studentName;
 
-    this.dataService.addStudent(student);
-    this.navCtrl.pop();
+    this.dataService.addStudent(student).then(res => this.navCtrl.pop());
+
   }
 
 
->>>>>>> upstream/master
+
 }
