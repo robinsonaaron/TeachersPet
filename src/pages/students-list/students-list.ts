@@ -35,7 +35,7 @@ export class StudentsList implements OnInit {
 
 
 
-  importClasses() {
+  importStudents() {
     this.dataService.getStudentList().then(res => {
       this.students = res;
     })
@@ -43,7 +43,7 @@ export class StudentsList implements OnInit {
 
 
   ngOnInit() {
-    this.importClasses();
+    this.importStudents();
   }
 
   toggleDeleteButton() {
@@ -56,7 +56,7 @@ export class StudentsList implements OnInit {
   confirmDelete() {
     let alert = this.alert.create({
       title: 'Delete?',
-      message: "Are you sure you want to delete this class?",
+      message: "Are you sure you want to delete this student?",
       buttons: [
         {
           text: 'Cancel',
@@ -67,8 +67,8 @@ export class StudentsList implements OnInit {
         {
           text: 'Confirm',
           handler: () => {
-            this.dataService.removeClass(this.studentSelected);
-            this.importClasses();
+            this.dataService.removeStudent(this.studentSelected);
+            this.importStudents();
           }
         }
       ]
@@ -76,7 +76,7 @@ export class StudentsList implements OnInit {
     alert.present();
   }
   ionViewWillEnter(){
-    this.importClasses();
+    this.importStudents();
   }
 
 
