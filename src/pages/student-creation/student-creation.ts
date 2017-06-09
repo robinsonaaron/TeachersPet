@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DataService, Student } from '../../providers/data-service';
 
 /**
  * Generated class for the StudentCreation page.
@@ -13,8 +14,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'student-creation.html',
 })
 export class StudentCreation {
+  studentName: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user: any = null;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataService) {
   }
 
   ionViewDidLoad() {
@@ -22,8 +26,17 @@ export class StudentCreation {
   }
 
 
-  addStudent(){
+  addStudent() {
+      let student:Student = new Student();
+      student.Email = "";
+      student.GithubID = "";
+      student.ImageURL = "";
+      student.SlackID = "";
+      student.Name = this.studentName;
 
-    //console.log(this.classService.classes);
+    this.dataService.addStudent(student);
+    this.navCtrl.pop();
   }
+
+
 }
