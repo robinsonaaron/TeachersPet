@@ -56,6 +56,7 @@ export class ClassListPage implements OnInit {
           handler: () => {
             this.dataService.removeClass(this.classSelected);
             this.importClasses();
+            this.toggleDeleteButton();
           }
         }
       ]

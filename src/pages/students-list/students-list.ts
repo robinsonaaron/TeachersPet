@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StudentDetail } from "../student-detail/student-detail";
 import {StudentCreation} from "../student-creation/student-creation";
+import { DataService } from '../../providers/data-service';
 
 
 @IonicPage()
@@ -11,7 +12,7 @@ import {StudentCreation} from "../student-creation/student-creation";
 })
 export class StudentsList implements OnInit {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataService) {
   }
 
   ionViewDidLoad() {
