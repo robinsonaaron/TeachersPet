@@ -57,7 +57,7 @@ export class StudentsList implements OnInit {
   confirmDelete() {
     let alert = this.alert.create({
       title: 'Delete?',
-      message: "Are you sure you want to delete this class?",
+      message: "Are you sure you want to delete this student?",
       buttons: [
         {
           text: 'Cancel',
