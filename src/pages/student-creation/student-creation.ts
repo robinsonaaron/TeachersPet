@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DataService } from '../../providers/data-service';
+import {  StudentsList} from '../../pages/students-list/students-list';
 
 /**
  * Generated class for the StudentCreation page.
@@ -14,16 +16,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class StudentCreation {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public  dataService: DataService) {
   }
+
+  student: any;
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StudentCreation');
   }
 
+  /*refreshStudentList() {
+    this.dataService.getStudentList().then(studentList => this.studentList = studentList);
+  }
+
+
 
   addStudent(){
-
-    //console.log(this.classService.classes);
-  }
+    //this.dataService.addStudent(this.studentName);
+    this.dataService.addStudent(this.student.Name).then(() => this.refreshStudentList());
+    this.navCtrl.pop();
+  }*/
 }
