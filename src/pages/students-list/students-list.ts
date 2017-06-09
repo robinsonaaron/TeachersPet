@@ -13,7 +13,6 @@ import { DataService } from '../../providers/data-service';
   templateUrl: 'students-list.html',
 })
 export class StudentsList implements OnInit {
-
   deleteToggle = false;
   students: any;
   studentSelected: any;

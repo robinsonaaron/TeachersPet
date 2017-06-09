@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import {StudentsList} from "../students-list/students-list";
 import {ClassListPage} from "../class-list/class-list";
 import {  DataService } from '../../providers/data-service'
@@ -16,7 +16,8 @@ import {  DataService } from '../../providers/data-service'
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public dataService: DataService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public dataService: DataService, public menuCtrl: MenuController) {
+    this.menuCtrl.swipeEnable(false);
   }
 
   ionViewDidLoad() {
